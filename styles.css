@@ -1,0 +1,26 @@
+/* create  custom properties (variables) */
+:root {
+    --grid-rows: 1;
+    --grid-cols: 1;
+    --spacing: 1fr;
+}
+
+#grid {
+    display: grid;
+    grid-gap: 1em;
+    
+    /*  Row spacing (for each column):
+        grid-template-rows: spacing, spacing, spacing, ...
+    ->  grid-template-rows: repeat(number of rows, spacing)
+    ->  grid-template-rows: repeat(css-variable, spacing) */
+
+    grid-template-rows: repeat(var(--grid-rows), var(--spacing));
+    grid-template-columns: repeat(var(--grid-cols), var(--spacing));
+
+}
+
+.grid-item {
+    padding: 1em;
+    border: 1px solid black;
+    text-align: center;
+}
