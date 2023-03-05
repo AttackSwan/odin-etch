@@ -1,26 +1,42 @@
-/* create  custom properties (variables) */
-:root {
-    --grid-rows: 1;
-    --grid-cols: 1;
-    --spacing: 1fr;
+body {
+    background-color: #494D5F;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    background-color: #d0bdf4;
+    padding: 8px;
+}
+
+#etchContainer {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto auto;
+}
+
+#footer {
+    background-color: #a0d2eb;
+    padding: 8px;
+    justify-content: center;
 }
 
 #grid {
     display: grid;
-    grid-gap: 1em;
-    
-    /*  Row spacing (for each column):
-        grid-template-rows: spacing, spacing, spacing, ...
-    ->  grid-template-rows: repeat(number of rows, spacing)
-    ->  grid-template-rows: repeat(css-variable, spacing) */
-
-    grid-template-rows: repeat(var(--grid-rows), var(--spacing));
-    grid-template-columns: repeat(var(--grid-cols), var(--spacing));
-
+    width: 300px;
+    height: 300px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
 }
 
 .grid-item {
-    padding: 1em;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
     text-align: center;
 }
