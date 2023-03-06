@@ -1,51 +1,74 @@
 :root {
-    --bgColor: #494D5F
+    --color-bg: #222E50;
+    --color-header: #FCCB06;
+    --color-ftr: #EDF7F6;
 }
 
 body {
-    background-color: var(--bgColor);
-    margin: 0;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--color-bg);
+    margin: 0;
+    height: 100vh;
 }
 
 #header {
     display: flex;
     justify-content: center;
-    background-color: #d0bdf4;
     padding: 8px;
+    font-family: 'VT323', monospace;
+    font-size: 70px;
+    background-color: var(--color-header);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #etchContainer {
     display: flex;
+    flex-direction: column;
     flex: 1;
-    justify-content: space-around;
     align-items: center;
-    margin: auto auto;
+    justify-content: center;
 }
 
-#controls {
-    display: flex;
-    gap: 16px;
+.controls {
+    margin: 32px;
 }
 
 #footer {
-    background-color: #a0d2eb;
-    padding: 8px;
+    display: flex;
+    color: black;
+    background-color: var(--color-ftr);
     justify-content: center;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 #grid {
     display: grid;
-    width: 300px;
-    height: 300px;
+    width: 550px;
+    height: 550px;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .grid-item {
     border-top: 1px solid black;
     border-right: 1px solid black;
     text-align: center;
+}
+
+button {
+    border: .3rem solid var(--color-ftr);
+    border-radius: 1rem;
+    margin: 1px 12px;
+    font-size: 1rem;
+    padding: .5rem .5rem;
+    transition: all .07s ease;
+    width: 10rem;
+    text-align: center;
+    color: var(--color-ftr);
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
 }

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href= "https://fonts.googleapis.com/css?family=VT323">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Etch-a-Sketch</title>
@@ -9,16 +10,19 @@
     <script src="javascript.js" defer></script>
 </head>
 <body>
-        <div id="header">Header Text!</div>
+        <div id="header">Etch-a-Sketch!</div>
         <div id="etchContainer">
-            <div id="controls"></div>
+            <div id="topControls" class="controls">
                 <button id="sizeBTN">Change size</button> 
                 <button id="clearBTN">Clear grid</button>
+            </div>
+            <div id="grid"></div>
+            <div id="bottomControls" class="controls">
                 <button id="monoBTN">Mono color</button>
                 <button id="rainbowBTN">Rainbow colors</button>
-                <button id="shadeBTN">Shade 10% black</button>
-            <div id="grid"></div>
+                <button id="shadeBTN">Shade 10%</button>
+            </div>
         </div>
-        <div id="footer">Footer</div>
+        <div id="footer">Created for the foundations module of The Odin Project</div>
 </body>
 </html>

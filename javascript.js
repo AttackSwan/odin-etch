@@ -1,5 +1,4 @@
 const defaultGridSize   = 24;
-const defaultColor      = "green";
 const grid              = document.getElementById("grid");
 const sizeButton        = document.getElementById("sizeBTN");
 const clearButton       = document.getElementById("clearBTN");
@@ -7,7 +6,9 @@ const monoButton        = document.getElementById("monoBTN");
 const rainbowButton     = document.getElementById("rainbowBTN");
 const shadeButton       = document.getElementById("shadeBTN");
 const bgColor           = getComputedStyle(document.documentElement)
-                            .getPropertyValue('--bgColor');
+                            .getPropertyValue('--color-bg');
+const hdrColor          = getComputedStyle(document.documentElement)
+                            .getPropertyValue('--color-header');
 let colorMode           = "mono";
 
 sizeButton.onclick      = () => getNewSize();
@@ -15,8 +16,6 @@ clearButton.onclick     = () => clearCells();
 monoButton.onclick      = () => {colorMode = "mono";}
 rainbowButton.onclick   = () => {colorMode = "rgb";}
 shadeButton.onclick     = () => {colorMode = "shade";};
-
-makeGrid(defaultGridSize);
 
 function makeGrid(size){  
     //set row and column layout
@@ -61,7 +60,7 @@ function clearCells(){
 }
 function colorCell(e){
     if (colorMode === "mono"){
-        e.target.style.backgroundColor = defaultColor;
+        e.target.style.backgroundColor = hdrColor;
     }
     else if (colorMode === "rgb"){
         const rgb1 = getRandom(0,255);
@@ -73,11 +72,15 @@ function colorCell(e){
         let shade = parseFloat(e.target.getAttribute("data-opacity"));
         let newShade = shade + 0.1;
         if (shade < 1){
-            e.target.style.backgroundColor = `rgb(0,0,0, ${newShade})`; 
+            e.target.style.backgroundColor = `rgb(252,203,6, ${newShade})`; 
             e.target.setAttribute("data-opacity", newShade);
         }
     }
 }
 function getRandom(min, max){
     return Math.random() * (max - min) + min;
+}
+
+window.onload = () => {
+    makeGrid(defaultGridSize);
 }
