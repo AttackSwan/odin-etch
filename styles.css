@@ -1,5 +1,9 @@
+:root {
+    --bgColor: #494D5F
+}
+
 body {
-    background-color: #494D5F;
+    background-color: var(--bgColor);
     margin: 0;
     height: 100vh;
     display: flex;
@@ -19,6 +23,14 @@ body {
     justify-content: space-around;
     align-items: center;
     margin: auto auto;
+}
+
+#controls {
+    display: block;
+}
+
+button {
+    display: block;
 }
 
 #footer {
